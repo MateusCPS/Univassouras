@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(270deg, #ff6f61, #f7b42c, #ffd700, #ff61a6);
+    background-size: 800% 800%;
+    animation: gradientAnimation 15s ease infinite;
+    font-family: 'Press Start 2P', cursive;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav a {
+    color: #ffd700;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+.presentation {
+    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    border-bottom: 4px solid #ffd700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: presentationFadeIn 1s ease-in-out;
+}
+
+@keyframes presentationFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 300%; /* Ajusta para o número de seções no carrossel */
+    transition: transform 1s ease-in-out;
+}
+
+.section {
+    flex: 1 0 100%;
+    height: 100%;
+    padding: 60px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    position: relative;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+/* Estilo padrão para links */
+a {
+    color: #fff; /* Cor branca para links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    transition: color 0.3s ease; /* Adiciona uma transição suave para a cor */
+}
+
+/* Estilo dos links ao passar o mouse */
+a:hover {
+    color: #ffd700; /* Cor dourada ao passar o mouse */
+}
+
+/* Estilo para links em listas */
+ul li a {
+    color: #fff; /* Garante que os links nas listas também sejam brancos */
+}
+
+.transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.transition.show {
+    opacity: 1;
+    pointer-events: auto;
+}
